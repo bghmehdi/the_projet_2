@@ -4,7 +4,7 @@
 
               
                 <fieldset>
-                  <legend><h2>ADD commande</h2></legend>
+                  <legend><h2>ADD a commande</h2></legend>
                   <form class="actions" action="{{ route('commandeVentes.store')}}" method="POST">
                     @if ( $errors->any() )
                                   <div class="pb-0 alert alert-danger">
