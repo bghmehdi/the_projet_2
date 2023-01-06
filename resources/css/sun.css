@@ -1,0 +1,55 @@
+#shine {
+  z-index: -1;
+  position: absolute;
+  right: 50%;
+  bottom: 50%;
+  width: 130px;
+  height: 130px;
+  display: grid;
+  background: radial-gradient(farthest-side, #f52a2155, #0000) 80% 55%/30px
+          30px,
+      radial-gradient(farthest-side, #f52a2155, #0000) 20% 55%/30px 30px,
+      radial-gradient(
+              farthest-side at top,
+              #0000 calc(100% - 5px),
+              #444 calc(100% - 4px) 98%,
+              #0000
+          )
+          50% 62%/40px 20px,
+      radial-gradient(
+              farthest-side at bottom,
+              #0000 calc(100% - 5px),
+              #444 calc(100% - 4px) 98%,
+              #0000
+          )
+          35% 40%/20px 10px,
+      radial-gradient(
+              farthest-side at bottom,
+              #0000 calc(100% - 5px),
+              #444 calc(100% - 4px) 98%,
+              #0000
+          )
+          65% 40%/20px 10px,
+      #fde535;
+  background-repeat: no-repeat;
+  filter: drop-shadow(0 0 5px #fde535) drop-shadow(0 0 2px #fde535);
+  border-radius: 50%;
+}
+#shine:before,
+#shine:after {
+  content: "";
+  grid-area: 1/1;
+  background: #fde535;
+  -webkit-mask: radial-gradient(#0000 80%, #000 81%);
+  transform: scale(1) rotate(var(--d, 22.5deg));
+  animation: a 1s infinite alternate;
+}
+#shine:after {
+  --d: -22.5deg;
+}
+
+@keyframes a {
+  to {
+      transform: scale(1.05) rotate(var(--d, 22.5deg));
+  }
+}
