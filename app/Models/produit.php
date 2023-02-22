@@ -13,7 +13,7 @@ class produit extends Model
     use HasFactory;
     protected $fillable = ['id', 'libelle', 'type_produits_id', 'prix', 'image', 'description', 'qtStock'];
     public function typeProduit(){
-        return $this-> hasMany(typeProduit::class);
+        return $this-> belongsTo(typeProduit::class);
     }
     public function commandeVente(){
         return $this-> hasMany(commandeVente::class);
