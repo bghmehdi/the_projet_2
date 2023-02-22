@@ -5,7 +5,7 @@
                 <legend>
                   <h2>edite commande {{$commandeVente->id}}</h2>
                 </legend>
-                
+                 
                   <form class="actions" action="{{ route('commandeVentes.update', $commandeVente->id)}}" method="POST">
                     @if ( $errors->any() )
                                   <div class="pb-0 alert alert-danger">

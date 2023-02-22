@@ -1,13 +1,15 @@
 <?php
 
+use App\Models\commandeVente;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ClientController;
-use App\Http\Controllers\CommandeVenteController;
+use App\Http\Controllers\videosController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PasswordController;
-use App\Models\commandeVente;
+use App\Http\Controllers\CommandeVenteController;
+use App\Http\Controllers\LigneCommandeVenteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +30,8 @@ Route::get('/search',[ClientController::class, 'search'])->middleware(['auth', '
 
 Route::resource('clients', ClientController::class)->middleware(['auth', 'verified','admin']);
 Route::resource('commandeVentes', CommandeVenteController::class)->middleware(['auth', 'verified','admin']);
+Route::resource('videos', videosController::class)->middleware(['auth', 'verified','admin']);
+Route::resource('ligneCommandeVente', LigneCommandeVenteController::class)->middleware(['auth', 'verified','admin']);
 
 
 Route::resource('profile', ProfileController::class)->middleware(['auth', 'verified']);

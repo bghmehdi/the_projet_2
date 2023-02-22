@@ -16,6 +16,6 @@ class commandeVente extends Model
         return $this-> belongsTo(Client::class);
     }
     public function produit(){
-        return $this->hasMany(produit::class);
+        return $this->belongsToMany(produit::class, 'ligne_commande_ventes', 'commande_ventes_id')->withPivot('qt' , 'id');
     } 
 }

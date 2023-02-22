@@ -20,10 +20,11 @@
 </head>
 <body>
     <nav class="navMenu">
-        <a id="logo" href="{{ url('/') }}"><i class="fa-brands fa-laravel"></i> laravel</a>
+        <a id="logo" href="{{ url('/') }}"><i class="fa-sharp fa-solid fa-truck-field"></i></a>
         <a href="{{route('home')}}">home</a>
         <a href="{{route('clients.index')}}">clients</a>
         <a href="{{route('commandeVentes.index')}}">commande vente</a>
+        <a href="{{route('videos.index')}}">videos</a>
         {{-- <ul class="auth"> --}}
             @guest
             @if (Route::has('login'))

@@ -3,16 +3,12 @@
 
               <div class="card-header">{{ __('Profile Information') }}</div>
               
-                <ul class="nav flex-column">
-                  <li class="nav-item">
-                    <a class="link" href="{{route('profile.index')}}">back to profile</a>
-                  </li>
-                </ul>
+                
                 
                 <p>
                   {{ __("Change your password.") }}
                 </p>
-                <form class="actions" action="{{route('password.update')}}" id="change_password_form" method="post">
+                <form class="actions" action="{{route('profile.update_password')}}" id="change_password_form" method="post">
                   @if (session('status'))
                       <div class="alert alert-success" role="alert">
                         {{ __('Profile Updated') }}

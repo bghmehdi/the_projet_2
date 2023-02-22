@@ -22,7 +22,7 @@
                   <div > 
                     <label for="">select a client</label>
                     <select name="client_id" id="">
-                      @foreach ($clients as $client)
+                      @foreach ($clients as $client) 
                         <option value="{{ $client->id }}">{{$client->nom}} {{ $client->prenom}}</option>
                       @endforeach
                     </select>
