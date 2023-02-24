@@ -1,8 +1,5 @@
 @extends('layouts.app')
 @section('content')
-
-
-              
                 <fieldset>
                   <legend><h3>ADD a commande</h3></legend>
                   <form class="actions" action="{{ route('commandeVentes.store')}}" method="POST">

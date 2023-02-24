@@ -16,13 +16,8 @@
             
             @csrf
             <div>
-                <label for="">La commande : </label>
-                <select name="commande_ventes_id" id="">
-                    <option value=""></option>
-                    @foreach($commandeVentes as $commandeVente)
-                        <option value=" {{$commandeVente->id}} "> {{$commandeVente->id}} </option>
-                    @endforeach
-                </select>
+                <input type="hidden" name="commande_ventes_id" value=" {{$commandeVente}} ">
+
             </div>
             <div>
                 <label for="">produit : </label>
