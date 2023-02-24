@@ -24,12 +24,13 @@ class LigneCommandeVenteController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {   
         // return('hi');
-        $commandeVentes = commandeVente::all();
+        $commandeVente = $request->cId;
         $produits = produit::all();
-        return view('ligneCommandeVente.create', ['commandeVentes' => $commandeVentes, 'produits' => $produits]);
+        
+        return view('ligneCommandeVente.create', ['commandeVente' => $commandeVente, 'produits' => $produits]);
     }
 
     /**
@@ -46,11 +47,6 @@ class LigneCommandeVenteController extends Controller
             'produit_id' => 'required',
             'qt' => 'required',
             ]);
-            /* $ligneCommandeVente = new ligneCommandeVente();
-            $ligneCommandeVente->commande_ventes_id = $request->commande_ventes_id;
-            $ligneCommandeVente->produit_id = $request->produit_id;
-            $ligneCommandeVente->qt = $request->qt;
-            $ligneCommandeVente->save(); */
             ligneCommandeVente::create($request->post());
         return redirect()->route('commandeVentes.show' , ['commandeVente' => $request->commande_ventes_id])
             ->with('success','produit added successfully');

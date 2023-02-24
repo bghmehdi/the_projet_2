@@ -29,7 +29,7 @@
                             {{$message}}
                           </div>
                         @endif
-                         <a class="link" href=" {{route('ligneCommandeVente.create')}} "><i class="fa-solid fa-plus"></i> {{ __('Add a produit')}}</a>
+                         <a class="link" href=" {{route('ligneCommandeVente.create', ['cId' => $commandeVente->id ])}} "><i class="fa-solid fa-plus"></i> {{ __('Add a produit')}}</a>
                         <tr>
                           <th>quantite</th>
                           <th>libelle</th>

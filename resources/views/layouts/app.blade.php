@@ -25,6 +25,8 @@
         <a href="{{route('clients.index')}}">clients</a>
         <a href="{{route('commandeVentes.index')}}">commande vente</a>
         <a href="{{route('videos.index')}}">videos</a>
+        <a href="{{route('typeProduits.index')}}">typeProduits</a>
+        <a href="{{route('produits.index')}}">Produits</a>
         {{-- <ul class="auth"> --}}
             @guest
             @if (Route::has('login'))
